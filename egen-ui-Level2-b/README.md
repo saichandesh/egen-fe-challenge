@@ -35,7 +35,30 @@ Open the `index.html` with any browser
 
 =================================
 
-	### Test Results
+	Test Results
 
 =================================
 
+Example used for testing
+
+```javascript
+function log(result) {
+    document.write(result);
+}
+var x=5;
+function sum(y){
+	return x+y;
+}
+log(sum(1));
+log("message");
+```
+where log(result) is helper function.
+
+Output for above test case
+
+```
+6message
+```
+ScreenShot of the Test Result
+
+![test](https://cloud.githubusercontent.com/assets/10813082/25818083/6aaf2e08-33f7-11e7-9a01-2acf6412b3e9.JPG)
