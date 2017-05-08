@@ -65,4 +65,4 @@ Start the application by running the following command:
 
 > npm start
 
-The application will be run on port 8000
+The application will be run on port `8000`
