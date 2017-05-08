@@ -45,7 +45,7 @@ Example used for testing
 function log(result) {
     document.write(result);
 }
-var x=5;
+var x=7;
 function sum(y){
 	return x+y;
 }
@@ -57,7 +57,7 @@ where log(result) is helper function.
 Output for above test case
 
 ```
-6message
+8message
 ```
 ScreenShot of the Test Result
 
