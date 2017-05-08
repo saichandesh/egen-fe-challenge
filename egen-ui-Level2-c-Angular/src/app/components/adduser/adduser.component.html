@@ -1,0 +1,108 @@
+<div class="adduser">
+	<div class="header"><h1>Add User</h1></div>
+	<div class="button" (click)="navgiateBack()">
+		<i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;Back
+	</div>
+</div>
+<div class="adduserbody">
+	<form #addUserForm="ngForm" *ngIf="!adding">
+		<div class="row">
+			<div class="col-xs-12 offset-xs-3">
+				<div class="col-xs-6">
+					First Name
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && firstname.invalid)}" type="text" minlength=2 placeholder="First Name" [(ngModel)]="user.firstName" name="firstname" #firstname="ngModel" required>
+					<span [hidden]="!(inputerror && firstname.invalid)" id="error">
+					      Firstname is required
+					</span><br/>
+					<span [hidden]="!(inputerror && (firstname.hasError('minlength')) )" id="error">
+					      Firstname should be Min of 2 characters
+					</span><br/>
+				</div>
+				<div class="col-xs-6">
+					Last Name
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && lastname.invalid)}" type="text" minlength=2 placeholder="Last Name" [(ngModel)]="user.lastName" name="lastname" #lastname="ngModel" required>
+					<span [hidden]="!(inputerror && lastname.invalid)" id="error">
+					      Lastname is required
+					</span><br/>
+					<span [hidden]="!(inputerror && (lastname.hasError('minlength')) )" id="error">
+					      Lastname should be Min of 2 characters
+					</span><br/>
+				</div>
+			</div>
+			<div class="col-xs-12 offset-xs-3">
+				<div class="col-xs-12">
+					Email
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && email.invalid)}" type="email" placeholder="Email" [(ngModel)]="user.email" name="email" #email="ngModel" required>
+					<span [hidden]="!(inputerror && email.invalid)" id="error">
+					      Email is required
+					</span><br/>
+				</div>
+			</div>
+			<div class="col-xs-12 offset-xs-3">
+				<div class="col-xs-6">
+					Company
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && company.invalid)}" type="text" placeholder="Company" [(ngModel)]="user.company.name" name="company" #company="ngModel" required>
+					<span [hidden]="!(inputerror && company.invalid)" id="error">
+					      Comapany is required
+					</span><br/>
+				</div>
+				<div class="col-xs-6">
+					Company Website
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && companywebsite.invalid)}" type="url" placeholder="Company Website" [(ngModel)]="user.company.website" name="companywebsite" #companywebsite="ngModel" required>
+					<span [hidden]="!(inputerror && companywebsite.invalid)" id="error">
+					      Comapany Website is required
+					</span><br/>
+				</div>
+			</div>
+			<div class="col-xs-12 offset-xs-3">
+				<div class="col-xs-12">
+					Street Address
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && streetadddress.invalid)}" type="text" placeholder="Stree Address" [(ngModel)]="user.address.street" name="streetadddress" #streetadddress="ngModel" required>
+					<span [hidden]="!(inputerror && streetadddress.invalid)" id="error">
+					      Street Address is required
+					</span><br/>
+				</div>
+			</div>
+			<div class="col-xs-12 offset-xs-3">
+				<div class="col-xs-6">
+					City
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && city.invalid)}" type="text" placeholder="City" [(ngModel)]="user.address.city" name="city" #city="ngModel" required>
+					<span [hidden]="!(inputerror && city.invalid)" id="error">
+					      City is required
+					</span><br/>
+				</div>
+				<div class="col-xs-6">
+					State
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && state.invalid)}" type="text" placeholder="State" [(ngModel)]="user.address.state" name="state" #state="ngModel" required>
+					<span [hidden]="!(inputerror && state.invalid)" id="error">
+					      State is required
+					</span><br/>
+				</div>
+			</div>
+			<div class="col-xs-12 offset-xs-3">
+				<div class="col-xs-6">
+					Country
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && country.invalid)}" type="text" placeholder="Country" [(ngModel)]="user.address.country" name="country" #country="ngModel" required>
+					<span [hidden]="!(inputerror && country.invalid)" id="error">
+					      Country is required
+					</span><br/>
+				</div>
+				<div class="col-xs-6">
+					Zip Code
+					<input class="form-control" [ngClass]="{'inputerrormsg' : (inputerror && zipcode.invalid)}" type="number" placeholder="Zip Code" [(ngModel)]="user.address.zip" name="zipcode" #zipcode="ngModel"  required>
+					<span [hidden]="!(inputerror && zipcode.invalid)" id="error">
+					      Zip Code is required
+					</span><br/>
+				</div>
+			</div>
+			<div class="col-xs-12 offset-xs-3">
+				<button class="btn btn-lg btn-primary" type="submit" (click)="addUserDetails(addUserForm)">
+		        Add</button><br/>
+			</div>
+		</div>
+	</form>
+	<div class="row" *ngIf="adding" id="spin">
+		<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>	
+</div>

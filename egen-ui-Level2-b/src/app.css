@@ -1,0 +1,16 @@
+body {
+	font-family: 'Lato', sans-serif;
+    width: 95%;
+}
+
+#jsinput,#output{
+    width: 90%;
+    height: 80vh;
+    overflow: auto;
+}
+#left,#right{
+    padding : 4vh;
+}
+p{
+    font-weight: bold;
+}

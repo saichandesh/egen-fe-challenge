@@ -1,0 +1,31 @@
+<div class="listusers">
+	<div class="header"><h1>Users</h1></div>
+	<div class="button" (click)="navgiateAddUser()">
+		<i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add User
+	</div>
+</div>
+
+<table class="table table-condensed" *ngIf="!loadingdetails">
+	<thead>
+		<tr>
+			<th></th>
+			<th>NAME</th>
+			<th>EMAIL</th>
+			<th>CITY</th>
+			<th>COMPANY</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let user of users">
+		<tr (click)="displayUserProfile(user)">
+			<td><img src="{{user.profilePic}}" /></td>
+			<td>{{user.firstName+' '+user.lastName}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.address.city}}</td>
+			<td>{{user.company.name}}</td>
+		</tr>
+	</tbody>
+</table>
+<div class="row" *ngIf="loadingdetails" id="spin">
+	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+	<span class="sr-only">Loading...</span>
+</div>	
