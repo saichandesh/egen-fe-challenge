@@ -1,7 +1,7 @@
 Code Executor Code Challenge
 =================================
 
-The JavaScript Code Exectuor Application is built using JavaSCipt, BootStrap, Qunit,HTML5 and CSS3. 
+The JavaScript Code Exectuor Application is built using JavaSCript, BootStrap, Qunit,HTML5 and CSS3. 
 
 =================================
 
